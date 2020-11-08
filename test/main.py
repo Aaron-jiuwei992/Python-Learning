@@ -5,5 +5,5 @@
 import this
 import random
 
-print(random.randint(3,10))
+print(random.randint(5,10))
 print(this.s)
