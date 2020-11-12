@@ -51,11 +51,8 @@ if __name__=="__main__":
     print("{}\t{}\t{}\t{}".format(max_,max_second,min_second,min_))
 """
 
-"""
-在循环中同时计算最大值，次大值，次最小值，最小值,和，平均值
-"""
 
-import random
+"""在循环中同时计算最大值，次大值，次最小值，最小值,和，平均值"""
 
 
 
@@ -101,12 +98,6 @@ def stastic_value_of_numbers_in_loop(numbers):
         
     return max_,max_second,min_second,min_,sum_numbers,average
     
-"""
-if __name__=="__main__": 
-    # numbers = [random.randint(1,10000) for _ in range(10)]
-    numbers = [9,2,8,0]
-    print("{}\n{}".format(numbers,stastic_value_of_numbers_in_loop(numbers)))
-"""
 
 #求少数变量中的最大值，次大值，次小值，最小值
 
@@ -148,13 +139,6 @@ def stastic_value_of_numbers_in_loop(numbers):
        
         
     return max_,max_second,min_second,min_
-
-"""
-if __name__ == "__main__":
-    numbers = [random.randint(1,10000) for _ in range(5)]
-    numbers.sort()
-    print("{}\n{}".format(numbers,stastic_value_of_numbers_in_loop(numbers)))
-"""
 
 
 
