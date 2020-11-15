@@ -13,7 +13,7 @@
 
 
 
-## 5. Contact
+## 4. Contact
 
 |Author          | Email            | Wechat      |
 | ---------------|:----------------:| -----------:|
@@ -21,5 +21,5 @@
 
 **Notice:  Any comments and suggestions are welcomed**
 
-## 6. License
+## 5. License
 [Apache License 1.0](./LICENSE)
