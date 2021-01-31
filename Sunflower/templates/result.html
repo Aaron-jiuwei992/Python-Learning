@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{static_url('css/result.css')}}" />
+<script type="text/javascript" src="{{static_url('js/jquery-3.4.1.min.js')}}"></script>
+<script type="text/javascript" src="{{static_url('js/search.js')}}"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>tornado仿百度搜索</title>
+</head>	
+
+<body>
+<div id="wrapper">
+	<div class="search-form">
+		<form action="/search/" method="get">
+		   <img width="140" height="45" src="{{static_url('images/logo.png')}}" alt="logo" />
+		   <input type="text" id="query" name="query"/>
+		   <input type="submit" id="submit" value="搜索"/>	
+		</form>
+	</div>
+	<div id="search-results">
+	<p id="prompt">为您找到的相关结果约0个,每次显示最匹配的前10条数据</p>
+	<ul id="results">
+	    {% for page in pages%}		
+	    <li class="result">
+	           <div class="info">
+				   <a href="{{page[0]}}"><h2 class="title">{{page[1]}}</h2></a>
+
+			<p class="content">
+			{{page[2]}} 
+                   </p>			
+	            </div>
+	    </li>
+	   {%end%}
+	
+	</ul>
+	</div>
+</div>
+</body>
+</html>

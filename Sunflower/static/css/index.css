@@ -1,0 +1,75 @@
+/*
+定义所有div标签的外边距为0
+*/
+div{
+	margin:0;
+}
+
+/*
+(1) 定义html文件中id为logo的div标签下的img标签的外边距样式
+(2) margin:50px 0 5px  表示定义img标签外边距在上方向的间距为50个像素，
+右方向的间距为0像素，下方向的间距为5个像素。margin的简写形式，
+可以从右至左进行省略，其它的同理。
+*/
+div#logo img{margin:50px 0 5px;}
+
+
+/*
+(1) 定义html文件中，class值为search-container的所有标签的样式
+(2) text-align:center,设置文本对齐方式为居中
+(3) font-size:14px,设置字体大小为14px
+*/
+.search-container{
+text-align:center;
+font-size:14px;
+}
+
+
+/*
+(1) 定义html文件中，id值为query的标签的样式
+(2) width:615px 设置宽度为615像素
+(3) border:0 设置边框的宽度为0
+(4) box-shadow 设置边框的阴影属性，CSS3中新增的属性
+(5) line-height: 20px 设置元素的行高为20像素
+(6) padding: 10px 5 px 10px 7px 设置元素内边距上方向的间距为10像素，
+右方向的间距为5像素，下方向的间距为10像素，左方向的间距为7像素
+(7) margin-right:-2px 设置元素外边距在右方向的间距为负2像素
+*/
+input#query{
+width:615px;
+border:0;
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+line-height: 20px; 
+padding: 10px 5px 10px 7px;
+margin-right:-2px;
+}
+
+
+/*
+(1) 定义html文件中，id值为submit的input标签的样式
+(2) background: #DDDDDD 设置背景颜色为#DDDDDD，是一个十六进制的颜色
+(3) background:-moz-linear-gradient(top,#fffeff,#dddddd) 
+    设置背景颜色渐变的属性，目前火狐3.6以上版本和google浏览器支持这个属性。
+	 
+(4) background:linear-gradient:(top, #ffffff, #dddddd) 
+    使用linear-gradient函数设置线性渐变的属性
+
+(5) border:0 设置边框的宽度为0
+(6) font-size: 16px 设置字体的大小为16像素 
+(7) line-height:40px 设置元素的行高为40像素
+(8) padding: 0 设置元素的所有内边距为0
+(9) width: 105px 设置元素所在边框的宽度为105像素
+(10)  box-shadow 设置元素的阴影属性
+
+*/
+input#submit{
+background: #DDDDDD;
+background:-moz-linear-gradient(top,#fffeff,#dddddd);
+background:linear-gradient:(top, #ffffff, #dddddd);
+border: 0;
+font-size: 16px;
+line-height:40px;
+padding: 0;
+width: 105px; 
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+}

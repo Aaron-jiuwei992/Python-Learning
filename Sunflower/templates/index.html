@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Github 项目搜索</title>
+<link href="{{static_url('css/index.css')}}" rel="stylesheet"/>
+</head>	
+
+<body>
+<div id="wrapper">
+ <div class="search-container">
+    <div id="logo">
+        <img width="271" height="106" 
+                  src="{{static_url('images/logo.png')}}" alt="logo" />
+    </div>
+		
+    <div class="search-form">
+        <form action="/search/" method="get">
+            <input type="text" id="query" name="query"/>
+	     <input type="submit" id="submit" value="搜索" />	
+	  </form>
+	  
+    </div>
+ </div>
+</div>
+
+</body>
+</html>
