@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+{% extends "shrimp/base.html" %}
+{% block title %}虾问-首页{% endblock title %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+
+{% block js %}
+<script src="{% static 'js/question.js' %}"></script>
+<script src="{% static 'js/comment.js' %}"></script>
+<script src="{% static 'js/logout.js' %}"></script>
+{% endblock js %}
+
+
+{% block body %}   
+	<div class="header_container">
+		<div class="app_header">
+			<div class="app_logo">
+				<img src="{% static 'images/chipscoco.png' %}" width="100px" height="90%"> 
+			</div>
+
+			<div class="navigation_box">
+				<ul>
+					<li class="selected"><a href="/">首页</a></li>
+					<!-- <li><a href="#">发现</a></li> -->
+					<li><a href="#">等你来答</a></li>
+				</ul>
+			</div>
+
+			<div class="search_container">
+				<form action="">
+					<input type="text" placeholder="游戏玩得菜怎么办" id="QESinput">
+					<input type="button" name="" value="提问" id="makeQuestion">
+				</form>
+				<div class="search_detail_box">
+					<div class="search_header_box">
+						<span>搜索历史</span>
+						<span><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除</span>
+					</div>
+					<div class="search_history_item">
+						<ul>
+							<li>湖人总冠军</li>
+							<li>有没有超级仙气的朋友圈文案</li>
+							<li>一给我里giaogiao</li>
+							<li>人在读大学时努力起来有多可怕？</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		<div class="user_profile_container">
+				<span class="im_bell_icon">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="number">3</span>
+				</span>
+				<span class="im_messages_icon">
+					<i class="fa fa-comments" aria-hidden="true"></i>
+					<span class="number">2</span>
+				</span>
+				<div class="profile_img_box">
+					<img src="{% static '/images/default.jpg' %}" width="30px">
+				</div>
+				<span class="menu_arrow"></span>
+				<div class="user_profile_menu" data-userid="{{user.id}}" data-nickname="{{user.nickname}}">
+					<ul>
+						<li id="urltoken" data-urltoken="{{user.url_token}}"><i class="fa fa-user" aria-hidden="true"></i><a href="/people/{{user.url_token}}">我的主页</a></li>
+						<li><i class="fa fa-cog" aria-hidden="true"></i><a href="#">设置</a></li>
+						<li class="logout"><i class="fa fa-power-off" aria-hidden="true"></i><a href="#">退出</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<form action="">
+		<div class="modal_wrapper">
+			<div class="make_question_container">
+				<span class="close"></span>
+				<div class="ask_title_wrapper">
+					<img src="{% static 'images/default.jpg' %}" alt="profile" width="40px">
+					<div class="ask_title">
+						<textarea name="question_title" type="text" placeholder="写下你的问题，准确地描述问题更容易得到解答"></textarea>
+						<span class="tips">你还没有给问题添加问号</span>
+					</div>
+				</div>
+		
+				<div class="askDetail_actionWrapper">
+					<i class="fa fa-font" aria-hidden="true"></i>
+					<i class="fa fa-picture-o" aria-hidden="true"></i> 
+				</div>
+		
+				<div class="askDetail_inputWrapper">
+					<textarea name="question_description" cols="30" rows="10" placeholder="输入问题背景、条件等详细信息（选填）"></textarea>
+				</div>
+
+				<div class="add_topic_box">
+					<span class="topic">电影</span>
+					<span><i class="fa fa-plus" aria-hidden="true"></i>添加话题（至少添加一个话题）</span>
+				</div>
+				<div class="submit_btn"><button type="submit">提问</button></div>
+			</div>
+			
+		</div>
+	</form>
+
+	<div class="content_list_container">
+		<div class="content_list_header">
+			<ul>
+				<li class="selected">推荐</li>
+				<li>关注</li>
+				<li>热榜</li>
+			</ul>
+		</div>
+
+	</div>
+{% csrf_token %}
+{% endblock %}
+</html>
