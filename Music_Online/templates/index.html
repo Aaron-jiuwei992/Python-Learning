@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐在线</title>
+</head>
+<style>
+    body{ text-align:center}
+    .search{
+	width: 449px;
+	height: 46px;
+	background:#eeefed;
+	border:1px solid #eeefed;
+	border-radius:3px;
+    display: inline;
+}
+.placeholder{
+	border:1px solid #c8c8c8;
+	border-radius:3px;
+	margin-left: 2px;
+	margin-top: 5px;
+	padding:0px;
+	width: 445px;
+	height: 36px;
+	color:black;
+}
+    #box{
+    height: 38px;
+    }
+
+    #table{
+        text-align: left;
+        font-size: 16px;
+    color: #0058a6;
+}
+    #title{
+        float: left;
+        color: gray;
+    }
+
+</style>
+<body>
+    <h3 id="title">音乐搜索</h3>
+    <div class="search">
+        <form>
+            <input class="placeholder" placeholder="   回车搜索……" name="q">
+{#            <button type="button" id="box" onclick="load_content()">搜索</button>#}
+        </form>
+    </div>
+
+    <div>
+        <table align="center" border="1" cellpadding="0" cellspacing="0" >
+         <thead>
+            <tr>
+                <th>音乐名称</th>
+                <th>播放链接</th>
+                </tr>
+         </thead>
+
+            <tbody id="table">
+            {% for info in music_info %}
+                <tr >
+                    <td>{{ info.music_name }}</td>
+                    <td><a href="{{ info.music_play_url }}">{{ info.music_play_url }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>
